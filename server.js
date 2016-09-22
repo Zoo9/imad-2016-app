@@ -5,6 +5,51 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+
+var content= {
+title: 'Article-One | Zoo9',
+heading:'Fawad Khan',
+date: 'Sept 22, 2016',
+content:   
+'<p>Fawad Afzal Khan is a Pakistani actor and singer. As a singer, he was one of the members of the band Entity Paradigm, an  alternative rock band based in Lahore. Their debut album Irtiqa was released in 2003, but the band was dissolved in 2007. Wikipedia       </p><p>        Novemberer 29, 1981 (age 34), Karachi, Pakistani Height: 1.8     Upcoming movie: Maula Jatt 2    Children: Ayaan Khan</p>'
+};
+function createTemplate(data){
+    
+var title = data.title;
+var date = data.date;
+var heading = data.heading;
+var content = data.content;
+var htmlTemplate = 
+<html>
+<head>
+    <title>
+        $[title]
+        </title>
+        <meta name="viewport" content="width-device-width, initial-scale=1"/>
+           <link href="/ui/style.css" rel="stylesheet" />
+    </head>
+     <body>
+        <div class="container">
+        <div>
+            <a href='/'>Home</a>
+        </div>
+        <hr/>
+        <h3>
+            $[heading]
+        </h3>
+        <div>
+            $[date]
+        </div>
+        <div>
+           $[content]
+
+        </div>
+        </div>
+        </body>
+</html>
+;
+}
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
