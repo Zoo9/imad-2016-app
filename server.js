@@ -5,8 +5,8 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-
-var articleOne= {
+var articles ={
+'article-two': {
 title: 'Article-One | Zoo9',
 heading:'Fawad Khan',
 date: 'Sept 22, 2016',
@@ -21,6 +21,39 @@ content:   `                <p>
                     Children: Ayaan Khan
                 </p>`
 
+},
+ 'article-three': {
+title: 'Article-One | Zoo9',
+heading:'Fawad Khan',
+date: 'Sept 22, 2016',
+content:   `                <p>
+                    Fawad Afzal Khan is a Pakistani actor and singer. As a singer, he was one of the members of the band Entity Paradigm, an  alternative rock band based in Lahore. Their debut album Irtiqa was released in 2003, but the band was dissolved in 2007. Wikipedia
+                
+                </p>
+                <p>
+                    Novemberer 29, 1981 (age 34), Karachi, Pakistan
+                    Height: 1.8 m
+                    Upcoming movie: Maula Jatt 2
+                    Children: Ayaan Khan
+                </p>`
+
+},
+ 'article-one': {
+title: 'Article-One | Zoo9',
+heading:'Fawad Khan',
+date: 'Sept 22, 2016',
+content:   `                <p>
+                    Fawad Afzal Khan is a Pakistani actor and singer. As a singer, he was one of the members of the band Entity Paradigm, an  alternative rock band based in Lahore. Their debut album Irtiqa was released in 2003, but the band was dissolved in 2007. Wikipedia
+                
+                </p>
+                <p>
+                    Novemberer 29, 1981 (age 34), Karachi, Pakistan
+                    Height: 1.8 m
+                    Upcoming movie: Maula Jatt 2
+                    Children: Ayaan Khan
+                </p>`
+
+}
 };
 function createTemplate(data){
     
@@ -66,17 +99,11 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one', function(req,res){
-  res.send(createTemplate(articleOne))
+app.get('/:articleNmae', function(req,res){
+    var articleNmae = res.params.articleName;
+  res.send(createTemplate(articles[articleNmae]))
 });
 
-app.get('/article-two', function(req,res){
-   res.send('Article two requested & will be served here!'); 
-});
-
-app.get('/article-three', function(req,res){
-   res.send('Article three requested & will be served here!'); 
-});
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
