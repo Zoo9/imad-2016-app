@@ -3,7 +3,7 @@ console.log('Loaded!');
 var element = document.getElementById('main-text');
 element.innerHTML = 'Bye bye';
 //move the image
-var img = getElementById('madi');
+var img = document.getElementById('madi');
 img.onclick = function(){
     img.style.marginleft = '100px';
 };
