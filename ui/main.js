@@ -4,7 +4,11 @@ var element = document.getElementById('main-text');
 element.innerHTML = 'Bye bye';
 //move the image
 var img = document.getElementById('madi');
-var marginRight = '10px';
+var marginLeft = 0;
+function moveRight(){
+    marginLeft = marginLeft + 10;
+    img.style.marginLeft = marginLeft + 'px';
+}
 img.onclick = function(){
-    moveRight = marginRight + '10px';
+    var interval = setInterval(moveRight, 100);
 };
