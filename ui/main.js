@@ -17,7 +17,7 @@ var request = new XMLHttpRequest();
   };
   //make the request
  request.open('GET','http://zoo9.imad.hasura-app.io/counter', true);
- request.send(counter);
+ request.send(counts);
 };
 
 
