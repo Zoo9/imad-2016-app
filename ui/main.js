@@ -21,10 +21,10 @@ var request = new XMLHttpRequest();
 };
 
 //Submit list
-var names = document.getElementById('name');
-names = nameInput.value;
+var name = document.getElementById('name');
+name = nameInput.value;
 var submit = document.getElementById('submit_btn');
-submit.onClick = function(){
+submit.onclick = function(){
     //Make a request to the server and send the list.
     
     //Capture it from the server and render it
