@@ -21,8 +21,8 @@ var request = new XMLHttpRequest();
 };
 
 //Submit list
-var name = document.getElementById('name');
-name = nameInput.value;
+var names = document.getElementById('name');
+names = nameInput.value;
 var submit = document.getElementById('submit_btn');
 submit.onClick = function(){
     //Make a request to the server and send the list.
