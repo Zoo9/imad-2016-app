@@ -20,8 +20,8 @@ var request = new XMLHttpRequest();
 };
 
 //Submit list
-var name = document.getElementById('name');
-name = nameInput.value;
+var nameInput = document.getElementById('name');
+var name = nameInput.value;
 var submit = document.getElementById('submit_btn');
 submit.onclick = function(){
     //Make a request to the server and send the list.
