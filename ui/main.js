@@ -1,22 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //counter code
 var button = document.getElementById('counter');
 
@@ -39,7 +20,22 @@ var request = new XMLHttpRequest();
  request.send(null);
 };
 
-
+//Sub,it list
+var name = document.getElementById('name');
+name = nameInput.value;
+var submit = document.getElementById('submit_btn');
+submit.onClick = function(){
+    //Make a request to the server and send the list.
+    
+    //Capture it from the server and render it
+    var names = ['name1','name2','name3','name4'];
+    var list = '';
+    for(var i=0;i<names.length;i++){
+        list += '<li>' + names[i] + '</li>';
+    }
+    var ul = document.getElementById('nameslist');
+    ul.InnerHTML = list;
+};
 
 
 
