@@ -20,7 +20,7 @@ var request = new XMLHttpRequest();
  request.send(null);
 };
 
-//Sub,it list
+//Submit list
 var name = document.getElementById('name');
 name = nameInput.value;
 var submit = document.getElementById('submit_btn');
